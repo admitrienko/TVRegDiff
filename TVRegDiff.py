@@ -1,10 +1,4 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-"""
-Created on Fri Oct 19 21:48:28 2018
 
-@author: anastasia
-"""
 
 import numpy as np
 from scipy.sparse import spdiags
@@ -108,15 +102,9 @@ def TVRegDiff( data, iter1, alph, u0 = 0, scale = 'large', ep = 1e-6, dx = 0, pl
         c = c.T
 
         B = alph * L + spdiags(list(reversed(c)) , 0, n, n )    
-            
-        #R = linalg.cholesky(B)
 
         tol = 1.0e-4;
         maxit = 100;
-        
-            
-        
-        #print(ii)
         
         
         if diagflag:
@@ -125,18 +113,6 @@ def TVRegDiff( data, iter1, alph, u0 = 0, scale = 'large', ep = 1e-6, dx = 0, pl
            gradient_matrix.append(np.linalg.norm(g))
             
         u = u + s[0];
-        
-        
-        #Ru = sum(np.square(u))
-        #Ru = sum(np.square(diff(u)))
-        
-        #Au = np.cumsum(u)
-         
-        #DF = sum(np.square(Au-data))
-        
-        #cost = alph * Ru + DF
-        
-        #cost_matrix.append(cost)
 
     return u
 
