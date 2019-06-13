@@ -1,5 +1,3 @@
-
-
 import numpy as np
 from scipy.sparse import spdiags
 from scipy.sparse import linalg
@@ -14,7 +12,7 @@ def diff(vector):
     return list([ x-y for (x,y) in zip(vector[1:],vector[:-1]) ])
     
 
-def TVRegDiff( data, iter1, alph, u0 = 0, scale = 'large', ep = 1e-6, dx = 0, plotflag = 1, diagflag = 1):
+def TVRegDiff( data, iter1, alph, u0 = 0, ep = 1e-6):
 #data        Vector of data to be differentiated.
 #iter1       Number of iterations to run the main loop.  A stopping
 #            condition based on the norm of the gradient vector g
